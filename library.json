@@ -1,0 +1,85 @@
+{
+  "title": "Book Maker Editor",
+  "majorVersion": 1,
+  "minorVersion": 22,
+  "patchVersion": 0,
+  "runnable": 0,
+  "machineName": "H5PEditor.BookMaker",
+  "author": "Joubel",
+  "coreApi": {
+    "majorVersion": 1,
+    "minorVersion": 24
+  },
+  "preloadedJs": [
+    {
+      "path": "scripts/bookmaker-editor.js"
+    },
+    {
+      "path": "scripts/scene-selector.js"
+    },
+    {
+      "path": "scripts/bg-selector.js"
+    }
+  ],
+  "preloadedCss": [
+    {
+      "path": "styles/bookmaker-editor.css"
+    },
+    {
+      "path": "styles/scene-selector.css"
+    },
+    {
+      "path": "styles/bg-selector.css"
+    },
+    {
+      "path": "styles/toolbar.css"
+    }
+  ],
+  "preloadedDependencies": [
+    {
+      "machineName": "FontAwesome",
+      "majorVersion": 4,
+      "minorVersion": 5
+    },
+    {
+      "machineName": "H5P.DragNBar",
+      "majorVersion": 1,
+      "minorVersion": 5
+    },
+    {
+      "machineName": "H5P.Image",
+      "majorVersion": 1,
+      "minorVersion": 1
+    },
+    {
+      "machineName": "H5P.AdvancedText",
+      "majorVersion": 1,
+      "minorVersion": 1
+    },
+    {
+      "machineName": "H5P.Audio",
+      "majorVersion": 1,
+      "minorVersion": 4
+    },
+    {
+      "machineName": "H5P.BookMaker",
+      "majorVersion": 1,
+      "minorVersion": 22
+    },
+    {
+      "machineName": "H5PEditor.ColorSelector",
+      "majorVersion": 1,
+      "minorVersion": 2
+    },
+    {
+      "machineName": "H5PEditor.RadioSelector",
+      "majorVersion": 1,
+      "minorVersion": 2
+    },
+    {
+      "machineName": "H5P.FontIcons",
+      "majorVersion": 1,
+      "minorVersion": 0
+    }
+  ]
+}
