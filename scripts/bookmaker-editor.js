@@ -845,12 +845,16 @@ H5PEditor.BookMaker.prototype.generateForm = function (elementParams, type) {
   var hideFields = ['title'];
 
   if (type === 'H5P.AdvancedText') {
-    hideFields.push('customImage');
+    hideFields.push('customImagePlay');
+    hideFields.push('customImagePlayPaused');
+    hideFields.push('customImagePause');
     hideFields.push('canBeMovedByUser');
   }
 
   if (type === 'H5P.Image') {
-    hideFields.push('customImage');
+    hideFields.push('customImagePlay');
+    hideFields.push('customImagePlayPaused');
+    hideFields.push('customImagePause');
     hideFields.push('canBeChangedByUser');
   }
 
@@ -860,7 +864,9 @@ H5PEditor.BookMaker.prototype.generateForm = function (elementParams, type) {
   }
 
   if (type === 'H5P.Shape') {
-    hideFields.push('customImage');
+    hideFields.push('customImagePlay');
+    hideFields.push('customImagePlayPaused');
+    hideFields.push('customImagePause');
     hideFields.push('backgroundOpacity');
     hideFields.push('canBeMovedByUser');
     hideFields.push('canBeChangedByUser');
@@ -1271,6 +1277,19 @@ H5PEditor.BookMaker.prototype.showElementForm = function (element, $wrapper, ele
     // Validate / save children
     for (var i = 0; i < element.children.length; i++) {
       element.children[i].validate();
+    }
+
+    // Adjust size for custom audio button image
+    if (
+      elementParams.action && typeof elementParams.action.library === 'string' && elementParams.action.library.split(' ')[0] === 'H5P.Audio' &&
+      elementParams.customImagePlay && elementParams.customImagePlay.width && elementParams.customImagePlay.height
+    ) {
+      if (elementParams.customImagePlay.width > elementParams.customImagePlay.height) {
+        elementParams.width = elementParams.height / elementParams.customImagePlay.height * elementParams.customImagePlay.width / that.sceneRatio;
+      }
+      else {
+        elementParams.height = elementParams.width / elementParams.customImagePlay.width * elementParams.customImagePlay.height * that.sceneRatio;
+      }
     }
 
     that.redrawElement($wrapper, element, elementParams);
