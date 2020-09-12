@@ -34,7 +34,7 @@ H5PEditor.BookMaker = function (parent, field, params, setValue) {
   this.params = params;
   // Elements holds a mix of forms and params, not element instances
   this.elements = [];
-  this.sceneRatio = 1.9753;
+  this.sceneRatio = 16 / 9;
 
   this.passReadies = true;
   parent.ready(function () {
