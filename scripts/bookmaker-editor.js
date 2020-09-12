@@ -491,8 +491,8 @@ H5PEditor.BookMaker.prototype.initializeDNB = function () {
     that.dnb.stopMovingCallback = function (x, y) {
       var params = that.params.scenes[that.bookMaker.$current.index()].elements[that.dnb.$element.index()];
 
-      params.x = (that.dnbMoves === 1) ? that.dnbPositionOverride.x : x;
-      params.y = (that.dnbMoves === 1) ? that.dnbPositionOverride.y : y;
+      params.x = (that.dnbMoves === 1 && that.dnbPositionOverride) ? that.dnbPositionOverride.x : x;
+      params.y = (that.dnbMoves === 1 && that.dnbPositionOverride) ? that.dnbPositionOverride.y : y;
 
       that.dnbMoves = 0;
     };
