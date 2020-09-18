@@ -844,7 +844,7 @@ H5PEditor.BookMaker.prototype.generateForm = function (elementParams, type) {
   // Manipulate semantics into only using a given set of fields
   var hideFields = ['title'];
 
-  if (type === 'H5P.AdvancedText') {
+  if (type === 'H5P.TextInputView') {
     hideFields.push('customImagePlay');
     hideFields.push('customImagePlayPaused');
     hideFields.push('customImagePause');

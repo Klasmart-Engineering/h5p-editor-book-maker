@@ -52,9 +52,9 @@
       "minorVersion": 1
     },
     {
-      "machineName": "H5P.AdvancedText",
+      "machineName": "H5P.TextInputView",
       "majorVersion": 1,
-      "minorVersion": 1
+      "minorVersion": 0
     },
     {
       "machineName": "H5P.Audio",
