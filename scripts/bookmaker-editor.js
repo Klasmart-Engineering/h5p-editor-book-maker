@@ -849,6 +849,7 @@ H5PEditor.BookMaker.prototype.generateForm = function (elementParams, type) {
     hideFields.push('customImagePlayPaused');
     hideFields.push('customImagePause');
     hideFields.push('canBeMovedByUser');
+    hideFields.push('displayAsButton');
   }
 
   if (type === 'H5P.Image') {
@@ -856,11 +857,13 @@ H5PEditor.BookMaker.prototype.generateForm = function (elementParams, type) {
     hideFields.push('customImagePlayPaused');
     hideFields.push('customImagePause');
     hideFields.push('canBeChangedByUser');
+    hideFields.push('displayAsButton');
   }
 
   if (type === 'H5P.Audio') {
     hideFields.push('backgroundOpacity');
     hideFields.push('canBeMovedByUser');
+    hideFields.push('displayAsButton');
   }
 
   if (type === 'H5P.Shape') {
@@ -870,6 +873,7 @@ H5PEditor.BookMaker.prototype.generateForm = function (elementParams, type) {
     hideFields.push('backgroundOpacity');
     hideFields.push('canBeMovedByUser');
     hideFields.push('canBeChangedByUser');
+    hideFields.push('displayAsButton');
   }
 
   // Only display goToScene field for goToScene elements
