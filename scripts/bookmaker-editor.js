@@ -890,6 +890,74 @@ H5PEditor.BookMaker.prototype.generateForm = function (elementParams, type) {
   H5PEditor.processSemanticsChunk(elementFields, elementParams, element.$form, self);
   element.children = self.children;
 
+  /*
+   * For the audio chooser, the H5P editor for Audio uses an overlay with
+   * position:absolute, so the editor form will not resize when the the audio
+   * chooser is opened. Without being able to change the core (without
+   * forking), here this workaround resizes the form as required.
+   */
+
+  /**
+   * Resize audio Dialog
+   *
+   * @param {H5PEditor.Group} audioGroup Editor group for audio options.
+   * @param {H5PEditor.AV} [audio] Audio element to consider for size, reset if undefined.
+   */
+  const resizeAudioDialog = function (audioGroup, audio) {
+    if (!audio) {
+      audioGroup.$content.css('height', '');
+    }
+    else {
+      const originalHeight = audioGroup.$content.height();
+      const requiredHeight = audio.$addDialog.parent().position().top + audio.$addDialog.outerHeight();
+
+      audioGroup.$content.css('height', Math.max(originalHeight, requiredHeight));
+    }
+  };
+
+  element.children.forEach(function (child) {
+    if (child.field.name === 'audio') {
+      const audioGroup = child;
+
+      if (!child.children) {
+        return;
+      }
+
+      child.children.forEach(function (child) {
+        if (!child.field || !child.field.type === 'audio') {
+          return; // Skip if not an audio editor element.
+        }
+
+        // Loading existing content with audio and thumbnail
+        if (child.$files.find('.h5p-thumbnail').length > 0) {
+          child.$files.find('.h5p-thumbnail').get(0).addEventListener('click', function () {
+            resizeAudioDialog(audioGroup, child);
+          });
+        }
+
+        // Adding new audio
+        child.$add.get(0).addEventListener('click', function () {
+          resizeAudioDialog(audioGroup, child);
+        });
+
+        // Cancelling audio dialog
+        child.$addDialog.find('.h5p-cancel').get(0).addEventListener('click', function () {
+          resizeAudioDialog(audioGroup);
+        });
+
+        // New audio uploaded
+        child.on('uploadComplete', function () {
+          resizeAudioDialog(audioGroup);
+
+          // New thumbnail was created
+          child.$files.find('.h5p-thumbnail').get(0).addEventListener('click', function () {
+            resizeAudioDialog(audioGroup, child);
+          });
+        });
+      });
+    }
+  });
+
   // Remove library selector and copy button and paste button
   var pos = elementFields.map(function (field) {
     return field.type;
