@@ -945,10 +945,13 @@ H5PEditor.BookMaker.prototype.generateForm = function (elementParams, type) {
           resizeAudioDialog(audioGroup);
         });
 
+        // New audio uploading
+        child.on('uploadProgress', function () {
+          resizeAudioDialog(audioGroup);
+        });
+
         // New audio uploaded
         child.on('uploadComplete', function () {
-          resizeAudioDialog(audioGroup);
-
           // New thumbnail was created
           child.$files.find('.h5p-thumbnail').get(0).addEventListener('click', function () {
             resizeAudioDialog(audioGroup, child);
