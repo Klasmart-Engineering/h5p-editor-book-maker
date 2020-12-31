@@ -321,7 +321,7 @@ H5PEditor.BookMaker.SceneSelector = (function ($, EventDispatcher) {
      * @private
      */
     var updateColorPicker = function () {
-      if (isSingleScene()) {
+      if (isSingleScene() && singleScenes[currentScene]) {
         singleScenes[currentScene].updateColorPicker();
       }
       else {
