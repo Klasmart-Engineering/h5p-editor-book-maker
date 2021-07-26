@@ -1,7 +1,7 @@
 {
   "title": "Book Maker Editor",
   "majorVersion": 1,
-  "minorVersion": 22,
+  "minorVersion": 23,
   "patchVersion": 0,
   "runnable": 0,
   "machineName": "H5PEditor.BookMaker",
@@ -64,7 +64,7 @@
     {
       "machineName": "H5P.BookMaker",
       "majorVersion": 1,
-      "minorVersion": 22
+      "minorVersion": 23
     },
     {
       "machineName": "H5PEditor.ColorSelector",
