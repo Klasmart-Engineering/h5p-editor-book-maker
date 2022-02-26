@@ -1,7 +1,7 @@
 {
   "title": "Book Maker Editor",
   "majorVersion": 1,
-  "minorVersion": 23,
+  "minorVersion": 24,
   "patchVersion": 0,
   "runnable": 0,
   "machineName": "H5PEditor.BookMaker",
@@ -42,9 +42,14 @@
       "minorVersion": 5
     },
     {
+      "machineName": "FontKidsLoop",
+      "majorVersion": 1,
+      "minorVersion": 0
+    },
+    {
       "machineName": "H5P.DragNBar",
       "majorVersion": 1,
-      "minorVersion": 5
+      "minorVersion": 6
     },
     {
       "machineName": "H5P.Image",
@@ -54,17 +59,17 @@
     {
       "machineName": "H5P.AdvancedText",
       "majorVersion": 1,
-      "minorVersion": 1
+      "minorVersion": 2
     },
     {
       "machineName": "H5P.Audio",
       "majorVersion": 1,
-      "minorVersion": 4
+      "minorVersion": 5
     },
     {
       "machineName": "H5P.BookMaker",
       "majorVersion": 1,
-      "minorVersion": 23
+      "minorVersion": 24
     },
     {
       "machineName": "H5PEditor.ColorSelector",

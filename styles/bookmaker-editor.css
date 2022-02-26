@@ -1,5 +1,6 @@
 .h5peditor-form .field.bookmaker,
 .editor.h5p-book-maker {
+  font-family: 'Roboto', sans-serif;
   position: relative;
 }
 .field.bookmaker > .h5peditor-label-wrapper {
@@ -248,7 +249,7 @@
 .h5p-book-maker .ui-widget textarea,
 .h5p-book-maker .ui-widget button {
   font-size: 1em;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 .h5peditor .ui-dialog .ui-dialog-content {
   position: static;
